@@ -1,5 +1,5 @@
 from django.contrib import admin
-from journal.models import Image, Author, Entry, Document, Section
+from simplejournal.models import Image, Author, Entry, Document, Section
 
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('title', 'artist', 'pub_date', 'image')

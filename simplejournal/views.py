@@ -4,7 +4,7 @@ from django.template.context import RequestContext
 from django.views.generic import list_detail
 from django.shortcuts import render
 
-from journal.models import Entry, Section
+from simplejournal.models import Entry, Section
 
 
 def index(request):

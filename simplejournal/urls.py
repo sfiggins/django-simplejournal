@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from journal.models import Entry
+from simplejournal.models import Entry
 
 urlpatterns = patterns('journal.views',
     url(r'^$', 'index', name="journal-index"),
