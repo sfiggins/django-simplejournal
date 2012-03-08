@@ -1,0 +1,7 @@
+========================
+Django Journal Changelog
+========================
+
+Version 0.0.1, 8th March 2012:
+------------------------------
+* First distutils version
