@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.template.context import RequestContext
 from django.views.generic import list_detail
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 
 from journal.models import Entry, Section
 
@@ -14,8 +14,8 @@ def index(request):
         galleries = Gallery.objects.all()[:3]
     except:
         pass
-    return render_to_response('journal/index.html', locals(),
-                              context_instance=RequestContext(request))
+    return render(request, 'journal/index.html', locals(),
+                  context_instance=RequestContext(request))
 
 
 def view_section(request, slug, page=1):
