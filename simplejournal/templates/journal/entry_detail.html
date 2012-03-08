@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load markup %}
+
+{% block title %}
+<title>Journal: {{object.title}}</title>
+{% endblock %}
+
+{% block extra_styles %}
+@import url("{{ STATIC_URL }}css/journal_detail.css");
+{% endblock %}
+
+{% block content %}
+<div id="entry">
+	<h1>{{object.title}}</h1>
+    <p class="authorship">By {{object.author}}</p>
+    <p class="datetime">{{object.pub_date|date:"l, F j, Y, P"}}</p>
+	<div id="body">
+		{% if object.get_image_set %}
+            <div id="imagelist">
+            {% load thumbnail %}
+			{% for photo in object.get_image_set %}
+				<div class="image">
+					<a href="{{photo.get_image_url}}">
+                      {% thumbnail photo.image 250x250 as im %}
+                      <img src ="{{ im.url }}">
+                      {% endthumbnail %}
+					</a>
+					<p class="caption">{{photo.caption}}</p>
+			    </div>
+			{% endfor %}
+            </div>
+		{% endif %}
+	{{object.body|markdown}}
+    </div>
+</div>
+{% endblock %}
