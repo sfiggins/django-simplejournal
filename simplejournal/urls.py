@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from simplejournal.models import Entry
 
-urlpatterns = patterns('journal.views',
+urlpatterns = patterns('simplejournal.views',
     url(r'^$', 'index', name="journal-index"),
     url(r'^section/(?P<slug>[\-\d\w]+)/$', 'view_section', name="journal-section"),
     url(r'^section/(?P<slug>[\-\d\w]+)/page/(?P<page>[0-9]+)/$', 'view_section', name="journal-section-page")
