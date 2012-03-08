@@ -1,0 +1,2 @@
+sorl-thumbnail
+django-tagging
